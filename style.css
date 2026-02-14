@@ -10,6 +10,8 @@ body, html {
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     position: relative;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 /* Dark Purple Night Sky Background */
@@ -96,14 +98,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    font-size: clamp(2rem, 8vw, 6.5rem);
     font-family: 'Kalam', cursive;
     color: #ffebee;
     text-shadow: 0 0 20px rgba(255, 192, 203, 0.8), 0 0 40px rgba(255, 105, 180, 0.6);
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 100vw;
+    word-wrap: break-word;
     font-weight: 400;
 }
 
@@ -122,6 +128,10 @@ body {
     opacity: 0;
     visibility: hidden;
     animation: contentFadeIn 1s ease-in 12s forwards;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 @keyframes contentFadeIn {
@@ -158,23 +168,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(15px, 4vw, 30px);
+    gap: clamp(10px, 3vw, 30px);
     margin: 40px 0;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .heart-frame {
     position: relative;
-    width: clamp(160px, 30vw, 220px);
-    height: clamp(160px, 30vw, 220px);
+    width: clamp(120px, 28vw, 220px);
+    height: clamp(120px, 28vw, 220px);
     border-radius: 50%;
-    padding: 10px;
+    padding: clamp(5px, 1.5vw, 10px);
     background: linear-gradient(135deg, rgba(255, 192, 203, 0.3), rgba(255, 105, 180, 0.3));
-    border: 5px solid rgba(255, 255, 255, 0.6);
+    border: clamp(3px, 1vw, 5px) solid rgba(255, 255, 255, 0.6);
     box-shadow: 0 0 30px rgba(255, 192, 203, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     animation: heartPulse 2s ease-in-out infinite;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .heart-frame:hover {
@@ -304,126 +320,182 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .fade-message {
-        font-size: 3.5rem;
+        font-size: clamp(2rem, 7vw, 3.5rem);
+        padding: 0 15px;
+        white-space: normal;
+        line-height: 1.3;
     }
     
     .content {
-        padding: 20px;
+        padding: 15px;
+        min-height: 100vh;
     }
     
     .title {
-        font-size: 3.5rem;
-        margin-bottom: 35px;
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        margin-bottom: 30px;
+        padding: 0 10px;
+        word-wrap: break-word;
     }
     
     .image-section {
-        gap: 20px;
-        margin: 35px 0;
+        gap: 15px;
+        margin: 30px 0;
+        padding: 0 5px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     
     .heart-frame {
-        width: 160px;
-        height: 160px;
-        padding: 10px;
-        border-width: 5px;
+        width: clamp(120px, 35vw, 160px);
+        height: clamp(120px, 35vw, 160px);
+        padding: 8px;
+        border-width: 4px;
     }
     
     .infinity {
-        font-size: 3rem;
+        font-size: clamp(2rem, 6vw, 3rem);
+        flex-shrink: 0;
     }
     
     .message {
-        font-size: 2.2rem;
-        margin-top: 35px;
-        line-height: 1.8;
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
+        margin-top: 30px;
+        line-height: 1.6;
+        padding: 0 15px;
+        word-wrap: break-word;
     }
     
     .music-animation {
-        margin-top: 45px;
+        margin-top: 40px;
     }
     
     .wave-container {
-        height: 70px;
-        gap: 10px;
+        height: 60px;
+        gap: 8px;
     }
     
     .wave-bar {
-        width: 8px;
+        width: 6px;
     }
     
     .wave-bar:nth-child(1) {
-        height: 25px;
+        height: 20px;
     }
     
     .wave-bar:nth-child(2) {
-        height: 50px;
+        height: 45px;
     }
     
     .wave-bar:nth-child(3) {
-        height: 70px;
+        height: 60px;
     }
     
     .wave-bar:nth-child(4) {
-        height: 50px;
+        height: 45px;
     }
     
     .wave-bar:nth-child(5) {
-        height: 25px;
+        height: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .fade-message {
-        font-size: 3rem;
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        padding: 0 10px;
+        line-height: 1.2;
+    }
+    
+    .content {
+        padding: 10px;
     }
     
     .title {
-        font-size: 3rem;
-        margin-bottom: 30px;
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    .image-section {
+        gap: 10px;
+        margin: 25px 0;
+        padding: 0 5px;
     }
     
     .heart-frame {
-        width: 140px;
-        height: 140px;
-        padding: 8px;
+        width: clamp(100px, 40vw, 140px);
+        height: clamp(100px, 40vw, 140px);
+        padding: 6px;
+        border-width: 3px;
     }
     
     .infinity {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
     }
     
     .message {
-        font-size: 2rem;
-        margin-top: 30px;
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
+        margin-top: 25px;
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+    
+    .music-animation {
+        margin-top: 35px;
     }
     
     .wave-container {
-        height: 65px;
-        gap: 8px;
+        height: 55px;
+        gap: 6px;
     }
     
     .wave-bar {
-        width: 7px;
+        width: 5px;
     }
     
     .wave-bar:nth-child(1) {
-        height: 22px;
+        height: 18px;
     }
     
     .wave-bar:nth-child(2) {
-        height: 45px;
+        height: 40px;
     }
     
     .wave-bar:nth-child(3) {
-        height: 65px;
+        height: 55px;
     }
     
     .wave-bar:nth-child(4) {
-        height: 45px;
+        height: 40px;
     }
     
     .wave-bar:nth-child(5) {
-        height: 22px;
+        height: 18px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .fade-message {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    
+    .title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+    
+    .heart-frame {
+        width: clamp(90px, 35vw, 120px);
+        height: clamp(90px, 35vw, 120px);
+    }
+    
+    .infinity {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    .message {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
     }
 }
 
@@ -438,11 +510,23 @@ body::before {
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
     z-index: 1001;
     opacity: 0;
     animation: hintFade 3s ease-in 1s;
     pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    body::before {
+        font-size: 0.75rem;
+        padding: 8px 15px;
+        top: 15px;
+    }
 }
 
 @keyframes hintFade {
