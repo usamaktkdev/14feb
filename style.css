@@ -48,7 +48,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(2rem, 8vw, 6.5rem);
+    font-size: clamp(6rem, 24vw, 10rem);
     font-family: 'Kalam', cursive;
     color: #ffebee;
     text-shadow: 0 0 20px rgba(255, 192, 203, 0.8), 0 0 40px rgba(255, 105, 180, 0.6);
@@ -58,7 +58,7 @@ body {
     white-space: normal;
     text-align: center;
     padding: 0 20px;
-    max-width: 90vw;
+    max-width: 95vw;
     word-wrap: break-word;
     font-weight: 400;
 }
@@ -240,7 +240,7 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .fade-message {
-        font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
+        font-size: clamp(4.5rem, 20vw, 8rem) !important;
         padding: 0 20px;
         white-space: normal;
         line-height: 1.3;
@@ -260,24 +260,25 @@ body {
     }
     
     .image-section {
-        gap: 15px;
+        flex-direction: row !important;
+        gap: 10px;
         margin: 30px 0;
         padding: 0 5px;
-        flex-direction: column;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .heart-frame {
-        width: clamp(130px, 35vw, 180px) !important;
-        height: clamp(130px, 35vw, 180px) !important;
-        padding: 8px;
-        border-width: 4px;
+        width: clamp(100px, 30vw, 150px) !important;
+        height: clamp(100px, 30vw, 150px) !important;
+        padding: 6px;
+        border-width: 3px;
     }
     
     .infinity {
-        font-size: clamp(2rem, 6vw, 3rem) !important;
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
         flex-shrink: 0;
-        transform: rotate(90deg);
+        transform: rotate(0deg) !important;
     }
     
     .message {
@@ -324,7 +325,7 @@ body {
 
 @media (max-width: 480px) {
     .fade-message {
-        font-size: clamp(2rem, 7vw, 3.5rem) !important;
+        font-size: clamp(3.5rem, 18vw, 7rem) !important;
         padding: 0 18px;
         white-space: normal;
         line-height: 1.2;
@@ -342,22 +343,24 @@ body {
     }
     
     .image-section {
-        gap: 12px;
+        flex-direction: row !important;
+        gap: 8px;
         margin: 25px 0;
         padding: 0 5px;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .heart-frame {
-        width: clamp(110px, 40vw, 150px) !important;
-        height: clamp(110px, 40vw, 150px) !important;
-        padding: 6px;
+        width: clamp(80px, 28vw, 120px) !important;
+        height: clamp(80px, 28vw, 120px) !important;
+        padding: 5px;
         border-width: 3px;
     }
     
     .infinity {
-        font-size: clamp(1.8rem, 5.5vw, 2.5rem) !important;
-        transform: rotate(90deg);
+        font-size: clamp(1.5rem, 4.5vw, 2.2rem) !important;
+        transform: rotate(0deg) !important;
     }
     
     .message {
@@ -404,7 +407,7 @@ body {
 /* Extra small devices */
 @media (max-width: 360px) {
     .fade-message {
-        font-size: clamp(1.8rem, 6vw, 3rem) !important;
+        font-size: clamp(3rem, 16vw, 6rem) !important;
         padding: 0 15px;
         max-width: 95vw;
     }
@@ -414,13 +417,19 @@ body {
         padding: 0 10px;
     }
     
+    .image-section {
+        flex-direction: row !important;
+        gap: 6px;
+    }
+    
     .heart-frame {
-        width: clamp(100px, 45vw, 130px) !important;
-        height: clamp(100px, 45vw, 130px) !important;
+        width: clamp(70px, 25vw, 110px) !important;
+        height: clamp(70px, 25vw, 110px) !important;
     }
     
     .infinity {
-        font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+        font-size: clamp(1.3rem, 4vw, 2rem) !important;
+        transform: rotate(0deg) !important;
     }
     
     .message {
