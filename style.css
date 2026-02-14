@@ -107,8 +107,13 @@ body {
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    padding: 0 15px;
+    max-width: 95vw;
+    word-wrap: break-word;
     font-weight: 400;
+    line-height: 1.3;
 }
 
 /* Main Content */
@@ -126,6 +131,10 @@ body {
     opacity: 0;
     visibility: hidden;
     animation: contentFadeIn 1s ease-in 12s forwards;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 @keyframes contentFadeIn {
@@ -147,6 +156,10 @@ body {
     color: #ffebee;
     text-shadow: 0 0 30px rgba(255, 192, 203, 0.9), 0 0 60px rgba(255, 105, 180, 0.7);
     animation: titleGlow 3s ease-in-out infinite;
+    padding: 0 15px;
+    box-sizing: border-box;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 @keyframes titleGlow {
@@ -235,6 +248,10 @@ body {
     line-height: 1.8;
     text-shadow: 0 0 20px rgba(255, 192, 203, 0.7);
     animation: messageFloat 4s ease-in-out infinite;
+    padding: 0 15px;
+    box-sizing: border-box;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 @keyframes messageFloat {
@@ -308,87 +325,31 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .fade-message {
-        font-size: clamp(2rem, 6vw, 3.5rem) !important;
+        font-size: clamp(1.2rem, 4vw, 2.2rem) !important;
+        padding: 0 20px !important;
+        white-space: normal !important;
+        max-width: 95vw !important;
+        line-height: 1.2;
     }
     
     .content {
-        padding: 15px;
+        padding: 15px 10px;
     }
     
     .title {
-        font-size: clamp(2rem, 6vw, 3.5rem) !important;
-        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+        margin-bottom: 25px;
+        padding: 0 10px;
     }
     
     .image-section {
-        gap: 15px;
-        margin: 30px 0;
+        gap: 12px;
+        margin: 25px 0;
     }
     
     .heart-frame {
-        width: clamp(120px, 30vw, 160px);
-        height: clamp(120px, 30vw, 160px);
-        padding: 8px;
-        border-width: 4px;
-    }
-    
-    .infinity {
-        font-size: clamp(2rem, 5vw, 3rem);
-    }
-    
-    .message {
-        font-size: clamp(1.5rem, 5vw, 2.2rem);
-        margin-top: 30px;
-        line-height: 1.6;
-    }
-    
-    .music-animation {
-        margin-top: 40px;
-    }
-    
-    .wave-container {
-        height: clamp(50px, 12vw, 70px);
-        gap: 8px;
-    }
-    
-    .wave-bar {
-        width: 6px;
-    }
-    
-    .wave-bar:nth-child(1) {
-        height: clamp(18px, 4vw, 25px);
-    }
-    
-    .wave-bar:nth-child(2) {
-        height: clamp(35px, 8vw, 50px);
-    }
-    
-    .wave-bar:nth-child(3) {
-        height: clamp(50px, 12vw, 70px);
-    }
-    
-    .wave-bar:nth-child(4) {
-        height: clamp(35px, 8vw, 50px);
-    }
-    
-    .wave-bar:nth-child(5) {
-        height: clamp(18px, 4vw, 25px);
-    }
-}
-
-@media (max-width: 480px) {
-    .fade-message {
-        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
-    }
-    
-    .title {
-        font-size: clamp(1.8rem, 5.5vw, 3rem) !important;
-        margin-bottom: 25px;
-    }
-    
-    .heart-frame {
-        width: clamp(100px, 35vw, 140px);
-        height: clamp(100px, 35vw, 140px);
+        width: clamp(100px, 28vw, 140px);
+        height: clamp(100px, 28vw, 140px);
         padding: 6px;
         border-width: 3px;
     }
@@ -398,12 +359,18 @@ body {
     }
     
     .message {
-        font-size: clamp(1.3rem, 4.5vw, 2rem);
+        font-size: clamp(1.2rem, 4.5vw, 1.8rem);
         margin-top: 25px;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+    
+    .music-animation {
+        margin-top: 35px;
     }
     
     .wave-container {
-        height: clamp(45px, 10vw, 65px);
+        height: clamp(40px, 10vw, 60px);
         gap: 6px;
     }
     
@@ -416,19 +383,106 @@ body {
     }
     
     .wave-bar:nth-child(2) {
-        height: clamp(30px, 7vw, 45px);
+        height: clamp(28px, 7vw, 40px);
     }
     
     .wave-bar:nth-child(3) {
-        height: clamp(45px, 10vw, 65px);
+        height: clamp(40px, 10vw, 60px);
     }
     
     .wave-bar:nth-child(4) {
-        height: clamp(30px, 7vw, 45px);
+        height: clamp(28px, 7vw, 40px);
     }
     
     .wave-bar:nth-child(5) {
         height: clamp(15px, 3.5vw, 22px);
+    }
+}
+
+@media (max-width: 480px) {
+    .fade-message {
+        font-size: clamp(1rem, 3.5vw, 1.8rem) !important;
+        padding: 0 18px !important;
+        white-space: normal !important;
+        max-width: 95vw !important;
+        line-height: 1.1;
+    }
+    
+    .title {
+        font-size: clamp(1.3rem, 4.5vw, 2.2rem) !important;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .heart-frame {
+        width: clamp(85px, 32vw, 120px);
+        height: clamp(85px, 32vw, 120px);
+        padding: 5px;
+        border-width: 3px;
+    }
+    
+    .infinity {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+    
+    .message {
+        font-size: clamp(1rem, 4vw, 1.6rem);
+        margin-top: 20px;
+        padding: 0 10px;
+        line-height: 1.4;
+    }
+    
+    .wave-container {
+        height: clamp(35px, 9vw, 55px);
+        gap: 5px;
+    }
+    
+    .wave-bar {
+        width: 4px;
+    }
+    
+    .wave-bar:nth-child(1) {
+        height: clamp(12px, 3vw, 18px);
+    }
+    
+    .wave-bar:nth-child(2) {
+        height: clamp(24px, 6vw, 35px);
+    }
+    
+    .wave-bar:nth-child(3) {
+        height: clamp(35px, 9vw, 55px);
+    }
+    
+    .wave-bar:nth-child(4) {
+        height: clamp(24px, 6vw, 35px);
+    }
+    
+    .wave-bar:nth-child(5) {
+        height: clamp(12px, 3vw, 18px);
+    }
+}
+
+@media (max-width: 360px) {
+    .fade-message {
+        font-size: clamp(0.9rem, 3vw, 1.5rem) !important;
+        padding: 0 15px !important;
+    }
+    
+    .title {
+        font-size: clamp(1.1rem, 4vw, 2rem) !important;
+    }
+    
+    .heart-frame {
+        width: clamp(75px, 30vw, 100px);
+        height: clamp(75px, 30vw, 100px);
+    }
+    
+    .infinity {
+        font-size: clamp(1rem, 3.5vw, 1.8rem);
+    }
+    
+    .message {
+        font-size: clamp(0.9rem, 3.5vw, 1.4rem);
     }
 }
 
